@@ -1,14 +1,22 @@
 import React, { useContext } from "react";
 import { View, Text, FlatList, Image, TouchableOpacity, StyleSheet } from "react-native";
 import { CartContext } from "../context/CartContext";
+<<<<<<< HEAD
 import products from "../models/ProductModel"; 
+=======
+import products from "../models/ProductModel";
+>>>>>>> 6b9917e (Initial commit)
 
 const HomeScreen = ({ navigation }) => {
   const { addToCart } = useContext(CartContext);
 
   return (
     <View style={styles.container}>
+<<<<<<< HEAD
       <Text style={styles.header}>All Products</Text>
+=======
+      <Text style={styles.header}>Grocery Shop</Text>
+>>>>>>> 6b9917e (Initial commit)
       <FlatList
         data={products}
         keyExtractor={(item) => item.id.toString()}
@@ -18,6 +26,7 @@ const HomeScreen = ({ navigation }) => {
             <Image source={item.image} style={styles.image} />
             <Text style={styles.name}>{item.name}</Text>
             <Text style={styles.price}>${item.price}</Text>
+<<<<<<< HEAD
             
             <TouchableOpacity style={styles.button} onPress={() => addToCart(item)}>
               <Text style={styles.buttonText}>Add to Cart</Text>
@@ -25,6 +34,13 @@ const HomeScreen = ({ navigation }) => {
 
             <TouchableOpacity 
               style={[styles.button, styles.detailsButton]} 
+=======
+            <TouchableOpacity style={styles.button} onPress={() => addToCart(item)}>
+              <Text style={styles.buttonText}>Add to Cart</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.detailsButton}
+>>>>>>> 6b9917e (Initial commit)
               onPress={() => navigation.navigate("ProductDetails", { product: item })}
             >
               <Text style={styles.buttonText}>See Details</Text>
@@ -36,6 +52,7 @@ const HomeScreen = ({ navigation }) => {
   );
 };
 
+<<<<<<< HEAD
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 15, backgroundColor: "#F5F5F5" },
   header: { fontSize: 24, fontWeight: "bold", textAlign: "center", marginBottom: 10 },
@@ -47,5 +64,8 @@ const styles = StyleSheet.create({
   detailsButton: { backgroundColor: "orange" },
   buttonText: { color: "#FFF", fontWeight: "bold" },
 });
+=======
+const styles = StyleSheet.create({ /* styles here */ });
+>>>>>>> 6b9917e (Initial commit)
 
 export default HomeScreen;

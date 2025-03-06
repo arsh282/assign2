@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { createContext, useState } from 'react';
 
 // Create Context
@@ -21,4 +22,26 @@ export const CartProvider = ({ children }) => {
             {children}
         </CartContext.Provider>
     );
+=======
+import React, { createContext, useState } from "react";
+
+export const CartContext = createContext();
+
+export const CartProvider = ({ children }) => {
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (product) => {
+    setCart([...cart, { ...product, cartId: Date.now().toString() }]);
+  };
+
+  const removeFromCart = (cartId) => {
+    setCart(cart.filter((item) => item.cartId !== cartId));
+  };
+
+  return (
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+      {children}
+    </CartContext.Provider>
+  );
+>>>>>>> 6b9917e (Initial commit)
 };
